@@ -132,7 +132,7 @@ class HyperSpace {
    * @returns {Promise<String>}
    */
   async publish(objectToCallback, callback, path) {
-    var uid = path || crypto.randomUUID();
+    var uid = path || Date.now() + Math.floor(Math.random() * 10000);
     for (var route of this.commPost.express._router.stack) {
       if (route.path !== undefined && route.path === path)
         throw new Error("Path Already Exist.");
