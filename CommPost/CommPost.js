@@ -1,7 +1,7 @@
 class CommPost {
   constructor(pm) {
-    var crypto = require("crypto");
-    this.mySecret = crypto.randomUUID();
+    /* var crypto = require("crypto");
+    this.mySecret = crypto.randomUUID(); */
   }
   prepareForPorteMod(pm) {
     if (!pm) return this;
