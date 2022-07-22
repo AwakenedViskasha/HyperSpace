@@ -21,7 +21,7 @@ var hs2;
 var cc1 = {
   name: "HyperSpace1",
   host: "127.0.0.1",
-  port: 80,
+  port: 89,
 };
 /**
  * @type {HyperSpace.ContactCard}
