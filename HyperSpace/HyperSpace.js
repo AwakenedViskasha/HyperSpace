@@ -19,7 +19,7 @@ class HyperSpace {
       return true;
     };
   }
-  #JSDOCBLABLA() {
+  JSDOCBLABLA() {
     /**
      * @type {CommPost}
      */
