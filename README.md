@@ -1,4 +1,4 @@
-# HyperSpace
+# HyperSpace (WIP)
 
 HyperSpace is a Node library used for distributing methods or/and objects through multiple Node programs.
 
@@ -84,9 +84,9 @@ await impostor.synchronizeProperties4Impostor(); //refresh data from hsObject
 console.log(impostor.c); //outputs "9".
 ```
 ## Limitations
-Not tested with inherited class.
-You have to implement yourself orchestration for published objects or Hyperspace ContactCards.
-No security layer for now...
+*Not tested with inherited class.
+*You have to implement yourself orchestration for published objects or Hyperspace ContactCards.
+*No security layer for now...
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
