@@ -10,10 +10,12 @@ var crypto = require("crypto");
 class HyperSpace {
   /**
    *
-   * @param {ContactCard} idCard
+   * @param {ContactCard} idCard Contains data for application interface
+   * @param {ContactCard} [contactCard] Contains data for application interfaces
    */
-  constructor(idCard) {
-    this.IDCard = idCard;
+  constructor(idCard, contactCard) {
+    this.idCard = idCard;
+    this.myContactCard = contactCard||idCard;
     this.contactCards = [];
     this.returnFunctionMessage = () => {
       return true;
@@ -31,12 +33,12 @@ class HyperSpace {
    */
   async launchThis() {
     await this.commPost.publish(
-      this.IDCard.name,
+      this.myContactCard.name,
       this.returnFunctionMessage,
       this
     );
     await this.commPost.publish(
-      this.IDCard.name + "/contactCardReceiver",
+      this.myContactCard.name + "/contactCardReceiver",
       this.contactCardReceiver,
       this
     );
@@ -107,7 +109,7 @@ class HyperSpace {
     var toReturn = false;
     var me = this;
     await this.commPost
-      .read(cc, "/contactCardReceiver", [me.IDCard])
+      .read(cc, "/contactCardReceiver", [me.myContactCard])
       .then((res) => {
         toReturn = true;
       })
@@ -138,7 +140,7 @@ class HyperSpace {
         throw new Error("Path Already Exist.");
     }
     await this.commPost.publish(
-      this.IDCard.name + "/" + uid,
+      this.myContactCard.name + "/" + uid,
       callback,
       objectToCallback
     );
@@ -150,7 +152,7 @@ class HyperSpace {
    * @param {String} path
    */
   unpublish(path) {
-    var myPath = "/" + this.IDCard.name + "/" + path;
+    var myPath = "/" + this.myContactCard.name + "/" + path;
     //console.log(this.commPost.express._router.stack);
     //console.log(myPath);
     this.commPost.express._router.stack =

@@ -1,9 +1,8 @@
-const {
-  Factory4HyperSpace,
-  HyperSpace,
-  Publisher4HyperSpace,
-  ImpostorMaker4HyperSpace,
-} = require("../export");
+const Factory4HyperSpace = require("../HyperSpace/Factory4HyperSpace");
+const HyperSpace = require("../HyperSpace/HyperSpace");
+const Publisher4HyperSpace = require("../HyperSpace/Publisher4HyperSpace");
+const ImpostorMaker4HyperSpace = require("../HyperSpace/ImpostorMaker4HyperSpace");
+
 /**
  * @type {HyperSpace}
  */
@@ -31,15 +30,18 @@ var cc2 = {
   host: "127.0.0.1",
   port: 88,
 };
-
+var pm1;
+var pm2;
 // We create HyperSpace using a provided Factory function. HyperSpace are still not operable but waiting for all its components to be operable.
-var pm1 = Factory4HyperSpace.MakeHyperSpace(cc1);
-var pm2 = Factory4HyperSpace.MakeHyperSpace(cc2);
-Promise.all([pm1, pm2]).then((values) => {
-  hs1 = values[0];
-  hs2 = values[1];
-  LaunchHSAndTradeContactCard();
-});
+function localExample() {
+  pm1 = Factory4HyperSpace.MakeHyperSpace(cc1);
+  pm2 = Factory4HyperSpace.MakeHyperSpace(cc2);
+  Promise.all([pm1, pm2]).then((values) => {
+    hs1 = values[0];
+    hs2 = values[1];
+    LaunchHSAndTradeContactCard();
+  });
+}
 
 async function LaunchHSAndTradeContactCard() {
   await hs1.launchThis();
@@ -93,3 +95,4 @@ async function publishHyperSpatialObjectAndCreateImpostor() {
   await impostor.synchronizeProperties4Impostor(); //call this method if you want to actualize the values of the properties.
   console.assert(impostor.c === 9);
 }
+module.exports = localExample;
