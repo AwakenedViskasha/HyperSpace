@@ -1,0 +1,12 @@
+{
+  "host": {
+    "name": "HyperSpace2",
+    "host": "REPLACE.THIS.WITH.MACHINE.IP",
+    "port": 87
+  },
+  "contactCard": {
+    "name": "HyperSpace2",
+    "host": "REPLACE.THIS.WITH.MACHINE.IP.OR.URL",
+    "port": 87
+  }
+}
