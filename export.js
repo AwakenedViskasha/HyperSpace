@@ -6,7 +6,7 @@ const Publisher4HyperSpace = require("./HyperSpace/Publisher4HyperSpace");
 const ImpostorMaker4HyperSpace = require("./HyperSpace/ImpostorMaker4HyperSpace");
 const LocalExample = require("./Example/localExample");
 const RemoteExample1 = require("./Example/RemoteExample/RemoteExample1");
-const RemoteExample2 = require("./Example/RemoteExample/remoteExample2");
+const RemoteExample2 = require("./Example/RemoteExample/RemoteExample2");
 module.exports = {
   HyperSpace,
   Factory4HyperSpace,
