@@ -124,7 +124,7 @@ class CommPost {
         req.destroy();
       });
       req.write(data);
-      req.setTimeout(2000);
+      req.setTimeout(10000);
       req.end();
     });
     var toReturn;
