@@ -1,16 +1,15 @@
 
 
 # HyperSpace (WIP)
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)]([https://www.buymeacoffee.com/gbraad](https://www.buymeacoffee.com/awakenedviskash))
 
-HyperSpace is a Node library used for distributing methods or/and objects through multiple Node programs.
+HyperSpace is a Node library used for creating WEB API quickly and simply. This library will help you creating a distributed methods/objects like architecture, hopefuly removing Web networking concern from your business logic.
 
 ## Features
 
+* Create and manage WEB API.
 * Links your differents Node instances through HyperSpace objects.
-* Publish objects to your HyperSpace, they can now be called anywhere from your Hyperspace network.
-* A Publisher class manages your published object.
-* An Impostor object can be created in any remote HyperSpace in order to act like a proxy/mimic for any original object.
+* Publish objects to your HyperSpace, they can now be called through the web.
+* Create Impostor object and streamline your API creations and API calls through your HyperSpace network.
 
 ## Installation
 
@@ -87,16 +86,22 @@ await impostor.synchronizeProperties4Impostor(); //refresh data from hsObject
 console.log(impostor.c); //outputs "9".
 ```
 ## Limitations
-*Not tested with inherited class.
-*You have to implement yourself orchestration for published objects or Hyperspace ContactCards.
-*No security layer for now...
+* Not tested with inherited class.
+* You have to implement yourself orchestration for published objects or Hyperspace ContactCards.
+* No security layer for now...
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Request for functionnality is open.
 
 Feedbacks are welcome since it is my first public package.
+## Contact
+
+email : awakenedviskasha@gmail.com
 
 ## Donations
+
+Donations are welcome. If the library helped you or you need an extra functionality, don"t hesitate to buy me a coffee !
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)]([https://www.buymeacoffee.com/gbraad](https://www.buymeacoffee.com/awakenedviskash))
 
 ## License
