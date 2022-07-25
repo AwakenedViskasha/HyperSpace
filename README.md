@@ -1,4 +1,7 @@
+
+
 # HyperSpace (WIP)
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)]([https://www.buymeacoffee.com/gbraad](https://www.buymeacoffee.com/awakenedviskash))
 
 HyperSpace is a Node library used for distributing methods or/and objects through multiple Node programs.
 
@@ -94,7 +97,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Feedbacks are welcome since it is my first public package.
 
 ## Donations
-Soon...
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)]([https://www.buymeacoffee.com/gbraad](https://www.buymeacoffee.com/awakenedviskash))
 
 ## License
-Unlicensed for now (but you can use it for feedback) until I find how I will manage it.
+MIT
