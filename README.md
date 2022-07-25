@@ -1,6 +1,6 @@
 
 
-# HyperSpace (WIP)
+# HyperSpace
 
 HyperSpace is a Node library used for creating WEB API quickly and simply. This library will help you creating a distributed method/object like architecture, hopefuly removing Web networking concern from your business logic.
 
@@ -97,7 +97,7 @@ Request for functionnality is open.
 Feedbacks are welcome since it is my first public package.
 ## Contact
 
-email : awakenedviskasha@gmail.com
+Do you have questions, suggestions or a business opportunity to offer ? You can contact me here : awakenedviskasha@gmail.com
 
 ## Donations
 
