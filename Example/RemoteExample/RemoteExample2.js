@@ -21,6 +21,7 @@ async function LaunchHSAndTradeContactCard() {
   console.log(impostor.c);
   await impostor.synchronizeProperties4Impostor(); //call this method if you want to actualize the values of the properties.
   console.log(impostor.c);
+  console.log("Example is finished.");
 }
 
 module.exports = remoteExample2;
