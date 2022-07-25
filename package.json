@@ -5,7 +5,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "awakenedviskasha@gmail.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AwakenedViskasha/HyperSpace.git"
+  },
   "license": "UNLICENSED",
   "description": "",
   "dependencies": {

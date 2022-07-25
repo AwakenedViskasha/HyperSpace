@@ -94,5 +94,6 @@ async function publishHyperSpatialObjectAndCreateImpostor() {
   console.assert((await impostor.concatAll()) === "ab9", "concatAll");
   await impostor.synchronizeProperties4Impostor(); //call this method if you want to actualize the values of the properties.
   console.assert(impostor.c === 9);
+  console.log("example finished");
 }
 module.exports = localExample;
