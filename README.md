@@ -2,7 +2,7 @@
 
 # HyperSpace (WIP)
 
-HyperSpace is a Node library used for creating WEB API quickly and simply. This library will help you creating a distributed methods/objects like architecture, hopefuly removing Web networking concern from your business logic.
+HyperSpace is a Node library used for creating WEB API quickly and simply. This library will help you creating a distributed method/object like architecture, hopefuly removing Web networking concern from your business logic.
 
 ## Features
 
