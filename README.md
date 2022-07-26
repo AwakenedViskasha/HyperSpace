@@ -103,7 +103,7 @@ Do you have questions, suggestions or a business opportunity to offer ? You can 
 
 Donations are welcome. If the library helped you or you need an extra functionality, don't hesitate to buy me a coffee !
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)]([https://www.buymeacoffee.com/gbraad](https://www.buymeacoffee.com/awakenedviskash))
+https://www.buymeacoffee.com/awakenedviskash
 
 ## License
 MIT
