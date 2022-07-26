@@ -13,7 +13,7 @@ HyperSpace is a Node library used for creating WEB API quickly and simply. This 
 
 ## Installation
 
-Use the package manager npm to install foobar.
+Use the package manager npm to install.
 
 ```bash
 npm install @awakenedviskasha/hyperspace
