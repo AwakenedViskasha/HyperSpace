@@ -26,7 +26,7 @@ npm install @awakenedviskasha/hyperspace
 ```javascript
 //From NodeProgram1
 
-const {Factory4HyperSpace} = require("hyperspace");
+const {Factory4HyperSpace} = require("@awakenedviskasha/hyperspace");
 
 var pm1 = await Factory4HyperSpace.MakeHyperSpace({
   name: "HyperSpace1",
