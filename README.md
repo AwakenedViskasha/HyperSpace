@@ -98,7 +98,7 @@ Feedbacks are welcome since it is my first public package.
 
 Do you have questions, suggestions or a business opportunity to offer ? You can contact me here : awakenedviskasha@gmail.com
 
-Do you want chat or join a community ? Come on our discord channel : https://discord.gg/Dd4dHsVswu
+Do you want to chat or join a community ? Come on our discord channel : https://discord.gg/Dd4dHsVswu
 
 ## Donations
 
