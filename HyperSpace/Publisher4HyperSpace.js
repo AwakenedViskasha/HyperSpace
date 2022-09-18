@@ -29,9 +29,9 @@ class Publisher4HyperSpace {
         .publish(this.object, this.object[method])
         .catch((res) => console.log(res));
     }
-    this.methods["getProperties4Impostor"] = await this.hyperSpace
+    /* this.methods["getProperties4Impostor"] = await this.hyperSpace
       .publish(this, this.getProperties4Impostor)
-      .catch((res) => console.log(res));
+      .catch((res) => console.log(res)); */
     this.methods["getMethods4Impostor"] = await this.hyperSpace
       .publish(this, this.getMethods4Impostor, url)
       .catch((res) => console.log(res));
