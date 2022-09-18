@@ -5,6 +5,7 @@ var crypto = require("crypto");
  * @typedef {Object} ContactCard
  * @property {String} name
  * @property {String} host
+ * @property {String} path
  * @property {Number} port
  */
 class HyperSpace {
@@ -15,7 +16,7 @@ class HyperSpace {
    */
   constructor(idCard, contactCard) {
     this.idCard = idCard;
-    this.myContactCard = contactCard||idCard;
+    this.myContactCard = contactCard || idCard;
     this.contactCards = [];
     this.returnFunctionMessage = () => {
       return true;
@@ -33,12 +34,14 @@ class HyperSpace {
    */
   async launchThis() {
     await this.commPost.publish(
-      this.myContactCard.name,
+      this.myContactCard.path,
       this.returnFunctionMessage,
       this
     );
     await this.commPost.publish(
-      this.myContactCard.name + "/contactCardReceiver",
+      this.myContactCard.path
+        ? this.myContactCard.path + "/contactCardReceiver"
+        : "contactCardReceiver",
       this.contactCardReceiver,
       this
     );
@@ -90,10 +93,12 @@ class HyperSpace {
       .then((res) => {
         if (res == true) {
           this.contactCards.push(cc);
+          console.log(this.contactCards);
           toReturn = true;
         } else toReturn = false;
       })
       .catch((err) => {
+        console.log("err");
         throw err;
       });
     return toReturn;
@@ -140,7 +145,7 @@ class HyperSpace {
         throw new Error("Path Already Exist.");
     }
     await this.commPost.publish(
-      this.myContactCard.name + "/" + uid,
+      this.myContactCard.path ? this.myContactCard.path + "/" + uid : uid,
       callback,
       objectToCallback
     );
@@ -152,7 +157,9 @@ class HyperSpace {
    * @param {String} path
    */
   unpublish(path) {
-    var myPath = "/" + this.myContactCard.name + "/" + path;
+    var myPath = this.myContactCard.path
+      ? "/" + this.myContactCard.path + "/" + path
+      : "/" + path;
     //console.log(this.commPost.express._router.stack);
     //console.log(myPath);
     this.commPost.express._router.stack =

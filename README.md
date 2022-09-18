@@ -30,6 +30,7 @@ const {Factory4HyperSpace} = require("@awakenedviskasha/hyperspace");
 
 var pm1 = await Factory4HyperSpace.MakeHyperSpace({
   name: "HyperSpace1",
+  path:"HyperSpace1",
   host: "127.0.0.1",
   port: 80,
 });
@@ -43,6 +44,7 @@ await hs1.launchThis()
 
 await hs1.addAndValidateContactCard({
   name: "HyperSpace2",
+  path:"HyperSpace1",
   host: "127.0.0.1",
   port: 88,
 }) //Try to reach an Hyperspace using the provided ContactCard
@@ -78,12 +80,9 @@ var impostorUrl = await publisher.publish4Impostor("myCuteImpostor");
 
 var impostor = await ImpostorMaker4HyperSpace(hs1, cc2, "myCuteImpostor");
 // Impostor will act as a proxy for hsObject from NodeProgram2
-console.log(impostor.c); //outputs "0".
+
 await impostor.incrementC(3, 6);
 console.log(await impostor.concatAll()); //outputs "ab9".
-console.log(impostor.c); // still outputs "0".
-await impostor.synchronizeProperties4Impostor(); //refresh data from hsObject
-console.log(impostor.c); //outputs "9".
 ```
 ## Limitations
 * Not tested with inherited class.
@@ -98,6 +97,8 @@ Feedbacks are welcome since it is my first public package.
 ## Contact
 
 Do you have questions, suggestions or a business opportunity to offer ? You can contact me here : awakenedviskasha@gmail.com
+
+Do you want chat or join a community ? Come on our discord channel : https://discord.gg/Dd4dHsVswu
 
 ## Donations
 

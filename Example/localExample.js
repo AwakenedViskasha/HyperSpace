@@ -19,6 +19,7 @@ var hs2;
  */
 var cc1 = {
   name: "HyperSpace1",
+  path: "HyperSpace1",
   host: "127.0.0.1",
   port: 89,
 };
@@ -27,6 +28,7 @@ var cc1 = {
  */
 var cc2 = {
   name: "HyperSpace2",
+  path: "HyperSpace2",
   host: "127.0.0.1",
   port: 88,
 };
@@ -92,8 +94,6 @@ async function publishHyperSpatialObjectAndCreateImpostor() {
   var impostor = await ImpostorMaker4HyperSpace(hs1, cc2, impostorUrl);
   await impostor["incrementC"](3, 6);
   console.assert((await impostor.concatAll()) === "ab9", "concatAll");
-  await impostor.synchronizeProperties4Impostor(); //call this method if you want to actualize the values of the properties.
-  console.assert(impostor.c === 9);
   console.log("example finished");
 }
 module.exports = localExample;

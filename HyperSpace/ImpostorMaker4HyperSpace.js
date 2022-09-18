@@ -12,9 +12,7 @@ async function makeImpostor(hyperSpace, cc, targetUrl) {
    * @type [Array<String>]
    */
   var methods = await hyperSpace.request(cc, targetUrl);
-  var toReturn = await hyperSpace
-    .request(cc, methods["getProperties4Impostor"])
-    .catch((res) => console.log(res));
+  var toReturn = {};
   Object.getOwnPropertyNames(methods).forEach((arg) => {
     var arg2 = JSON.parse(JSON.stringify(methods[arg]));
     var newF = async function (...a) {
@@ -22,10 +20,7 @@ async function makeImpostor(hyperSpace, cc, targetUrl) {
     };
     toReturn[arg] = newF;
   });
-  toReturn["synchronizeProperties4Impostor"] = async function () {
-    var properties = await this.getProperties4Impostor();
-    for (var property in properties) this[property] = properties[property];
-  };
+
   return toReturn;
 }
 module.exports = makeImpostor;

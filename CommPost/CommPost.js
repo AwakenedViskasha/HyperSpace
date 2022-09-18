@@ -32,7 +32,7 @@ class CommPost {
   async publish(path, callback, objectToCallBack) {
     var me = this;
     var reqStruct = { path: "path", function: "any" };
-    path = "/" + path;
+    path = path ? "/" + path : "";
     var functionSocket = async function (req, res) {
       try {
         var response = await callback.apply(objectToCallBack, req.body.param);
@@ -67,7 +67,9 @@ class CommPost {
       var port;
       var data;
       hostname = contactCard.host;
-      path = "/" + contactCard.name + addressToRead;
+      path = contactCard.path ? "/" + contactCard.name : "";
+      path += addressToRead;
+      console.log(path);
       port = contactCard.port;
       data = { param: dataToSend };
       data = JSON.stringify(data);

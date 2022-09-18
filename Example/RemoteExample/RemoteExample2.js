@@ -18,9 +18,7 @@ async function LaunchHSAndTradeContactCard() {
   var impostor = await ImpostorMaker4HyperSpace(hs2, cc1, "myCuteImpostor");
   await impostor["incrementC"](3, 6);
   console.log(await impostor.concatAll());
-  console.log(impostor.c);
   await impostor.synchronizeProperties4Impostor(); //call this method if you want to actualize the values of the properties.
-  console.log(impostor.c);
   console.log("Example is finished.");
 }
 
