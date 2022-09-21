@@ -8,6 +8,7 @@ class Publisher4HyperSpace {
     this.hyperSpace = hs;
     this.object = object;
     this.methods = {};
+    this.impostorContactCard = null;
     for (var method of listOfMethods) this.methods[method] = "";
   }
   async publishObject() {
@@ -23,7 +24,7 @@ class Publisher4HyperSpace {
   getMethods4Impostor() {
     return this.methods;
   }
-  async publish4Impostor(url) {
+  async publish4Impostor(url, meta) {
     for (var method of Object.getOwnPropertyNames(this.methods)) {
       this.methods[method] = await this.hyperSpace
         .publish(this.object, this.object[method])
@@ -35,6 +36,14 @@ class Publisher4HyperSpace {
     this.methods["getMethods4Impostor"] = await this.hyperSpace
       .publish(this, this.getMethods4Impostor, url)
       .catch((res) => console.log(res));
+    this.impostorContactCard = {
+      "impostor contact card": {
+        type: this.object.constructor.name,
+        path: this.methods["getMethods4Impostor"],
+        HCC: this.hyperSpace.myContactCard,
+      },
+    };
+    if (meta) this.impostorContactCard["impostor contact card"].meta = meta;
     return this.methods["getMethods4Impostor"];
   }
   async unpublishObject() {
