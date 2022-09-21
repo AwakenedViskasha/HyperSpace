@@ -111,7 +111,7 @@ MIT
 
 ## CHANGELOG
 
-# v1.0.6
+### v1.0.6
 * Now publisher create an ImpostorContactCard when you create an Impostor.
 
 
