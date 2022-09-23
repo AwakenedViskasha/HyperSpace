@@ -69,7 +69,6 @@ class CommPost {
       hostname = contactCard.host;
       path = contactCard.path ? "/" + contactCard.name : "";
       path += addressToRead;
-      console.log(path);
       port = contactCard.port;
       data = { param: dataToSend };
       data = JSON.stringify(data);

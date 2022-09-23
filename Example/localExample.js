@@ -87,6 +87,10 @@ async function publishHyperSpatialObjectAndCreateImpostor() {
     "concatAll",
   ]);
   var impostorUrl = await publisher.publish4Impostor("myCuteImpostor", "meta"); //Publish a special object used to create a Impostor in a remote HyperSpace
+  var impostorCC = await publisher.publishImpostor("myCuteImpostor2", "meta");
+  console.log(impostorCC);
+  var impo = await hs1.requestFromContactCard(impostorCC);
+  console.log(impo);
   /**
    * @type {HyperSpatialObject}
    */

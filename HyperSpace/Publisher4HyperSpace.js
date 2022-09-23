@@ -46,6 +46,26 @@ class Publisher4HyperSpace {
     if (meta) this.impostorContactCard["impostor contact card"].meta = meta;
     return this.methods["getMethods4Impostor"];
   }
+
+  async publishImpostor(url, meta) {
+    for (var method of Object.getOwnPropertyNames(this.methods)) {
+      this.methods[method] = await this.hyperSpace
+        .publish(this.object, this.object[method])
+        .catch((res) => console.log(res));
+    }
+    this.methods["getMethods4Impostor"] = await this.hyperSpace
+      .publish(this, this.getMethods4Impostor, url)
+      .catch((res) => console.log(res));
+    var impostorContactCard = {
+      ContactCard: {
+        type: this.object.constructor.name,
+        path: this.methods["getMethods4Impostor"],
+        HCC: this.hyperSpace.myContactCard,
+      },
+    };
+    if (meta) impostorContactCard["ContactCard"].meta = meta;
+    return impostorContactCard;
+  }
   async unpublishObject() {
     try {
       for (var method of Object.getOwnPropertyNames(this.methods)) {

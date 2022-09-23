@@ -174,6 +174,10 @@ class HyperSpace {
     });
     return toReturn;
   }
+  async requestFromContactCard(cc, param) {
+    return await this.request(cc.ContactCard.HCC, cc.ContactCard.path, param);
+  }
+
   syncRequest(cc, path, param) {
     console.log("sYnc");
     var once = false;
