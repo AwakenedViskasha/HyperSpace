@@ -178,28 +178,23 @@ class HyperSpace {
     return await this.request(cc.ContactCard.HCC, cc.ContactCard.path, param);
   }
 
-  syncRequest(cc, path, param) {
-    console.log("sYnc");
-    var once = false;
-    var cursor = false;
-    var me = this;
-    var toReturn;
-    var callbackCount = 0;
+  async makeImpostor(icc) {
+    var hyperSpace = this;
+    var cc = icc.ContactCard.HCC;
+    var target = icc.ContactCard.path;
+    /**
+     * @type [Array<String>]
+     */
+    var methods = await hyperSpace.request(cc, target);
+    var toReturn = {};
+    Object.getOwnPropertyNames(methods).forEach((arg) => {
+      var arg2 = JSON.parse(JSON.stringify(methods[arg]));
+      var newF = async function (...a) {
+        return hyperSpace.request(cc, arg2, a);
+      };
+      toReturn[arg] = newF;
+    });
 
-    var x = 0;
-    var cb = function (res) {
-      console.log("cb!" + res);
-      x = 1;
-      toReturn = cb;
-    };
-    me.commPost.syncRead(cc, "/" + path, param, cb);
-    var seconds = 500;
-    var waitTill = new Date(new Date().getTime() + seconds);
-    while (waitTill > new Date()) {}
-    waitTill = new Date(new Date().getTime() + seconds);
-    while (waitTill > new Date()) {}
-    waitTill = new Date(new Date().getTime() + seconds);
-    while (waitTill > new Date()) {}
     return toReturn;
   }
 }

@@ -111,7 +111,9 @@ MIT
 
 ## CHANGELOG
 
-### v1.0.6
-* Now publisher create an ImpostorContactCard when you create an Impostor.
-
+### v1.0.7
+* [F2] Contact Card Direct Request implemented. YOu can nom use ContactCard from impostor for making a request through the HyperSpace.
+* Added a new method for creating Impostor that will return a ContactCard.
+* Removed a console.log during a request.
+* Deprecation warning : ImpostorMaker4HyperSpace.makeImpostor and Publisher4HyperSpace.publish4Impostor will be deprecated.
 

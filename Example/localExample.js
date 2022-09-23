@@ -87,17 +87,19 @@ async function publishHyperSpatialObjectAndCreateImpostor() {
     "concatAll",
   ]);
   var impostorUrl = await publisher.publish4Impostor("myCuteImpostor", "meta"); //Publish a special object used to create a Impostor in a remote HyperSpace
+  // [F2] Contact Card Direct Request Test
   var impostorCC = await publisher.publishImpostor("myCuteImpostor2", "meta");
-  console.log(impostorCC);
-  var impo = await hs1.requestFromContactCard(impostorCC);
-  console.log(impo);
+  var impo = await hs1.makeImpostor(impostorCC);
+  await impo["incrementC"](3, 6);
+  console.assert((await impo.concatAll()) === "ab9", "concatAll [F2]");
+  // [F2] Contact Card Direct Request Test : fin
   /**
    * @type {HyperSpatialObject}
    */
 
   var impostor = await ImpostorMaker4HyperSpace(hs1, cc2, impostorUrl);
   await impostor["incrementC"](3, 6);
-  console.assert((await impostor.concatAll()) === "ab9", "concatAll");
+  console.assert((await impostor.concatAll()) === "ab18", "concatAll");
   console.log("example finished");
 }
 module.exports = localExample;
